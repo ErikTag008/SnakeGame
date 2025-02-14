@@ -42,10 +42,11 @@ namespace SnakeGame
             }
             
             Console.Clear();
-            bool supportsAnsi = Console.IsOutputRedirected == false &&
-                                (Environment.OSVersion.Platform == PlatformID.Unix ||
-                                (Environment.OSVersion.Platform == PlatformID.Win32NT &&
-                                (Console.KeyAvailable || Console.LargestWindowWidth > 0)));
+            //bool supportsAnsi = Console.IsOutputRedirected == false &&
+            //                    (Environment.OSVersion.Platform == PlatformID.Unix ||
+            //                    (Environment.OSVersion.Platform == PlatformID.Win32NT &&
+            //                    (Console.KeyAvailable || Console.LargestWindowWidth > 0)));
+            bool supportsAnsi = false;
             GameEngine gameEngine = new GameEngine(gridSizeX, gridSizeY, updateDelay, 5, supportsAnsi);
 
             await Task.Delay(Timeout.Infinite);
